@@ -15,7 +15,8 @@ spec:
     canary: # A new field that used to provide configurable options for a Canary strategy
       steps:
       - setWeight: 20
-      - pause: {}
+      - pause: { duration: 10s }
+      - setWeight: 100
   selector:
     matchLabels:
       app: {{ template "helm-guestbook.name" . }}
